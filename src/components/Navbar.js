@@ -4,38 +4,42 @@ import Link from 'gatsby-link'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 
+import styled from 'styled-components'
+import { Wrapper } from './Wrapper'
+
+const ListItem = styled.li`
+  padding: 1rem;
+  display: inline-block;
+`
+
+const List = styled.ul`
+  padding: 0;
+  margin: 0;
+  margin-left: auto;
+`
+
+const Nav = styled.nav`
+  display: flex;
+`
+
+const Logo = styled.div`
+  background-color: dodgerblue;
+  align-self: center;
+`
+
 const Navbar = () => (
-  <nav className="navbar is-transparent">
-    <div className="container">
-      <div className="navbar-brand">
-        <Link to="/" className="navbar-item">
-          <figure className="image">
-            <img src={logo} alt="Kaldi" style={{ width: '88px' }} />
-          </figure>
-        </Link>
-      </div>
-      <div className="navbar-start">
-        <Link className="navbar-item" to="/about">
-          About
-        </Link>
-        <Link className="navbar-item" to="/products">
-          Products
-        </Link>
-      </div>
-      <div className="navbar-end">
-        <a
-          className="navbar-item"
-          href="https://github.com/AustinGreen/gatsby-netlify-cms-boilerplate"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span className="icon">
-            <img src={github} alt="Github" />
-          </span>
-        </a>
-      </div>
-    </div>
-  </nav>
+  <Wrapper>
+    <Nav>
+      <Logo>
+        Logo
+      </Logo>
+      <List>
+        <ListItem>Pris</ListItem>
+        <ListItem>Om oss</ListItem>
+        <ListItem>Kontakta oss</ListItem>
+      </List>
+    </Nav>
+  </Wrapper>
 )
 
 export default Navbar

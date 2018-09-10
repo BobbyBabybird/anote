@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import Hero from './../components/Hero'
 
 export default class IndexPage extends React.Component {
   render() {
@@ -9,9 +10,10 @@ export default class IndexPage extends React.Component {
 
     return (
       <section className="section">
+        <Hero />
         <div className="container">
           <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Latest Stories</h1>
+            <h1 className="has-text-weight-bold is-size-2">Whaaaat</h1>
           </div>
           {posts
             .map(({ node: post }) => (
