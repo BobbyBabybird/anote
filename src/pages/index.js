@@ -5,12 +5,32 @@ import styled from 'styled-components'
 import Hero from './../components/Hero'
 import Layout from './../components/Layout'
 import Wrapper from './../components/Wrapper'
+import { Heading2 } from './../components/Typo'
+import { CenterBlock, GridBlock } from './../components/Blocks'
+
+const message = 'I ett byggprojekt blir det lätt ett hav av dokumentation att hålla rätt på och för många av våra kunder började det just så, med ett proppfullt skrivbord utan struktur. Upptäck tjusningen med ett lättarbetat projektverktyg där du arbetar med ditt projekt samlat på ett och samma ställe. I a-note har du allt ifrån arbetsordrar, rapporter och dina kunder digitalt - lagrade och sparade, idag och för framtiden.'
+const gridItems = [
+  {
+    title: 'Projecktledare',
+    message: 'Som projektledare skall du se till att allt flyter på - vilket inte alltid är helt enkelt. A-note förenklar kommunikationen mellan dig, hantverkaren och slutkunden.',
+    bg: '/img/products-grid1.jpg'
+  },
+  {
+    title: 'Hantverkare',
+    message: 'Även för hantverkaren ställs det en hel del krav kring dokumentation, vilket för många upplevs tidskrävande och krångligt. Vi förenklar detta genom vår lättanvända mobilapplikation.',
+    bg: '/img/products-grid2.jpg'
+  },
+  {
+    title: 'Kund',
+    message: 'God kommunikation minskar risken för missförstånd och genom A-note är du som beställare alltid delaktig och kan följa vad som sker i ditt projektet',
+    bg: '/img/products-grid3.jpg'
+  }
+]
 
 const Section = styled.section`
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
-  border: 2px dotted palevioletred;
 `;
 
 export default class IndexPage extends React.Component {
@@ -20,14 +40,20 @@ export default class IndexPage extends React.Component {
 
     return (
       <Layout>
+        <Hero />
         <Section className="section">
-          <Hero />
+          <CenterBlock
+            title="Tycker du också att det blir för mycket papper att hålla koll på?"
+            message={message}
+          />
+          <GridBlock items={gridItems} />
+          <CenterBlock
+            title="Genom digitalisering effektiviserar vi dina projekt."
+            message="A-note ger dig och ditt företag full kontroll över byggprojekten och byggarbetsplatsen. Med a-note har du projektet samlat på en plats och som projektledare kan du via data i nutid se till att projektet är i fas. A-note är ett komplett system där rapportering från arbetsplatsen enkelt fördelas mellan projektledare och slutkund - ingenting faller mellan stolarna vilket skapar bättre slutresultat. Du kan med enkelhet rapportera tilläggsarbeten, avvikelser, tillbud och observationer, egenkontroller och dagbok, via a-notes användarvänliga mobilapplikation. 
+"
+          />
           <div className="container">
-            <div className="content">
-              <h1 className="has-text-weight-bold is-size-2">Whaaaat</h1>
-            </div>
-            {posts
-              .map(({ node: post }) => (
+            {posts.map(({ node: post }) => (
                 <div
                   className="content"
                   style={{ border: '1px solid #eaecee', padding: '2em 4em' }}

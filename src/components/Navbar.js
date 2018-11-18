@@ -1,13 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
-
+import styled from 'styled-components'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
-
-import styled from 'styled-components'
 import { Wrapper } from './Wrapper'
+import { Heading6 } from './Typo'
 
-const ListItem = styled.li`
+const ListItem = styled(Heading6)`
   padding: 1rem;
   display: inline-block;
 `
@@ -16,6 +15,7 @@ const List = styled.ul`
   padding: 0;
   margin: 0;
   margin-left: auto;
+  --margin-bottom: 0;
 `
 
 const Nav = styled.nav`
@@ -37,9 +37,9 @@ const Navbar = () => (
         Logo
       </Logo>
       <List>
-        <ListItem>Pris</ListItem>
-        <ListItem>Om oss</ListItem>
-        <ListItem>Kontakta oss</ListItem>
+        <ListItem as="li">
+          Kontakta oss
+        </ListItem>
       </List>
     </Nav>
   </NavbarWrapper>

@@ -5,6 +5,11 @@ import { createGlobalStyle } from 'styled-components'
 import Navbar from '../components/Navbar'
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --primary-color: #57a596;
+    --default-text-color: #4A4A4A;
+  }
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
   /* http://meyerweb.com/eric/tools/css/reset/
    v4.0 | 20180602
    License: none (public domain)
@@ -56,6 +61,10 @@ const GlobalStyle = createGlobalStyle`
     border-collapse: collapse;
     border-spacing: 0;
   }
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+  font-size: 1em;
 `;
 
 const TemplateWrapper = ({ children }) => (
