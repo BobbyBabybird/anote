@@ -26,9 +26,12 @@ const Logo = styled.div`
   background-color: dodgerblue;
   align-self: center;
 `
+const NavbarWrapper = styled(Wrapper)`
+  z-index: 100;
+`;
 
 const Navbar = () => (
-  <Wrapper>
+  <NavbarWrapper>
     <Nav>
       <Logo>
         Logo
@@ -39,7 +42,7 @@ const Navbar = () => (
         <ListItem>Kontakta oss</ListItem>
       </List>
     </Nav>
-  </Wrapper>
+  </NavbarWrapper>
 )
 
 export default Navbar

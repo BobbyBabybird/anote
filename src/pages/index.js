@@ -1,7 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
 import Hero from './../components/Hero'
+import Layout from './../components/Layout'
+import Wrapper from './../components/Wrapper'
+
+const Section = styled.section`
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px dotted palevioletred;
+`;
 
 export default class IndexPage extends React.Component {
   render() {
@@ -9,38 +19,40 @@ export default class IndexPage extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
 
     return (
-      <section className="section">
-        <Hero />
-        <div className="container">
-          <div className="content">
-            <h1 className="has-text-weight-bold is-size-2">Whaaaat</h1>
+      <Layout>
+        <Section className="section">
+          <Hero />
+          <div className="container">
+            <div className="content">
+              <h1 className="has-text-weight-bold is-size-2">Whaaaat</h1>
+            </div>
+            {posts
+              .map(({ node: post }) => (
+                <div
+                  className="content"
+                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
+                  key={post.id}
+                >
+                  <p>
+                    <Link className="has-text-primary" to={post.fields.slug}>
+                      {post.frontmatter.title}
+                    </Link>
+                    <span> &bull; </span>
+                    <small>{post.frontmatter.date}</small>
+                  </p>
+                  <p>
+                    {post.excerpt}
+                    <br />
+                    <br />
+                    <Link className="button is-small" to={post.fields.slug}>
+                      Keep Reading →
+                    </Link>
+                  </p>
+                </div>
+              ))}
           </div>
-          {posts
-            .map(({ node: post }) => (
-              <div
-                className="content"
-                style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                key={post.id}
-              >
-                <p>
-                  <Link className="has-text-primary" to={post.fields.slug}>
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <small>{post.frontmatter.date}</small>
-                </p>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button is-small" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </div>
-            ))}
-        </div>
-      </section>
+        </Section>
+      </Layout>
     )
   }
 }

@@ -5,4 +5,5 @@ export const Wrapper = styled.div`
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
+  border: 2px dotted palevioletred;
 `
