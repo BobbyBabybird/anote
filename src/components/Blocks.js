@@ -8,7 +8,7 @@ const Block = styled.div`
   max-width: 60%;
   margin: 0 auto;
   --margin-bottom: 40px;
-  background-color: ${props => props.inverted ? 'khaki' : 'transparent'};
+  background-color: ${props => props.inverted ? '#ACE1D6' : 'transparent'};
   position: relative;
   &:before {
     content: '';

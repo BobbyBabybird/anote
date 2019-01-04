@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { createGlobalStyle } from 'styled-components'
 import Navbar from '../components/Navbar'
+import Footer from '../components/Footer'
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -70,9 +71,10 @@ const GlobalStyle = createGlobalStyle`
 const TemplateWrapper = ({ children }) => (
   <div>
     <GlobalStyle />
-    <Helmet title="Home | Gatsby + Netlify CMS" />
+    <Helmet title="Home | A-note" />
     <Navbar />
     <div>{children}</div>
+    <Footer />
   </div>
 )
 

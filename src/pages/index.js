@@ -58,31 +58,6 @@ export default class IndexPage extends React.Component {
             title="Prova fritt i 30 dagar"
             message="Det är enkelt att komma igång!. Registrera din organisation och prova fritt i 30 dagar. A-note är användarvänligt, men skulle du ha några frågor finns vi på supporten här för dig. Därför ska du välja oss - Förbättra kundnöjdheten. - Få gladare medarbetare. - Vinn fler affärer."
           />
-          <div className="container">
-            {posts.map(({ node: post }) => (
-                <div
-                  className="content"
-                  style={{ border: '1px solid #eaecee', padding: '2em 4em' }}
-                  key={post.id}
-                >
-                  <p>
-                    <Link className="has-text-primary" to={post.fields.slug}>
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <small>{post.frontmatter.date}</small>
-                  </p>
-                  <p>
-                    {post.excerpt}
-                    <br />
-                    <br />
-                    <Link className="button is-small" to={post.fields.slug}>
-                      Keep Reading →
-                    </Link>
-                  </p>
-                </div>
-              ))}
-          </div>
         </Section>
       </Layout>
     )
