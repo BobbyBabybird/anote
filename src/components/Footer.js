@@ -17,6 +17,14 @@ const Row = styled.div`
   width: ${props => props.large ? '50%' : '20%'};
 `;
 
+const Li = styled.li`
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  color: var(--default-text-color);
+  font-size: 1.0rem;
+  margin-bottom: var(--margin-bottom, 10px);
+`;
+
 const Footer = () => (
   <Background>
     <FooterWrapper>
@@ -29,17 +37,17 @@ const Footer = () => (
       <Row>
         <Heading4>Kontakt</Heading4>
         <ul>
-          <li>Alviksvägen 11</li>
-          <li>111 22 Bromma</li>
-          <li>info@a-note.se</li>
-          <li>+46(0)70-111 22 33</li>
+          <Li>Alviksvägen 11</Li>
+          <Li>111 22 Bromma</Li>
+          <Li>info@a-note.se</Li>
+          <Li>+46(0)70-111 22 33</Li>
         </ul>
       </Row>
       <Row>
         <Heading4>Social Medier</Heading4>
         <ul>
-          <li>Facebook</li>
-          <li>Instagram</li>
+          <Li>Facebook</Li>
+          <Li>Instagram</Li>
         </ul>
       </Row>
     </FooterWrapper>
