@@ -8,10 +8,45 @@ const Block = styled.div`
   max-width: 60%;
   margin: 0 auto;
   --margin-bottom: 40px;
+  background-color: ${props => props.inverted ? 'khaki' : 'transparent'};
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    height: 100%;
+    background-color: inherit;
+    width: 100vw;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    height: 100%;
+    background-color: inherit;
+    width: 100vw;
+  }
 `
 
-const CenterBlock = ({ title, message }) => (
-  <Block>
+const Image = styled.div`
+  width: 280px;
+  height: 280px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  border-radius: 9999px;
+  background-image: url(${props => props.image});
+  background-size: cover;
+  background-position: center;
+`
+
+const CenterBlock = ({ title, message, bg, image }) => (
+  <Block inverted={bg}>
+    {image && <Image image={image} />}
     <Heading2>{title}</Heading2>
     <Text>{message}</Text>
   </Block>

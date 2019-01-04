@@ -49,8 +49,14 @@ export default class IndexPage extends React.Component {
           <GridBlock items={gridItems} />
           <CenterBlock
             title="Genom digitalisering effektiviserar vi dina projekt."
-            message="A-note ger dig och ditt företag full kontroll över byggprojekten och byggarbetsplatsen. Med a-note har du projektet samlat på en plats och som projektledare kan du via data i nutid se till att projektet är i fas. A-note är ett komplett system där rapportering från arbetsplatsen enkelt fördelas mellan projektledare och slutkund - ingenting faller mellan stolarna vilket skapar bättre slutresultat. Du kan med enkelhet rapportera tilläggsarbeten, avvikelser, tillbud och observationer, egenkontroller och dagbok, via a-notes användarvänliga mobilapplikation. 
+            message="A-note ger dig och ditt företag full kontroll över byggprojekten och byggarbetsplatsen. Med a-note har du projektet samlat på en plats och som projektledare kan du via data i nutid se till att projektet är i fas. A-note är ett komplett system där rapportering från arbetsplatsen enkelt fördelas mellan projektledare och slutkund - ingenting faller mellan stolarna vilket skapar bättre slutresultat. Du kan med enkelhet rapportera tilläggsarbeten, avvikelser, tillbud och observationer, egenkontroller och dagbok, via a-notes användarvänliga mobilapplikation.
 "
+          />
+          <CenterBlock
+            bg={true}
+            image="/img/products-grid1.jpg"
+            title="Prova fritt i 30 dagar"
+            message="Det är enkelt att komma igång!. Registrera din organisation och prova fritt i 30 dagar. A-note är användarvänligt, men skulle du ha några frågor finns vi på supporten här för dig. Därför ska du välja oss - Förbättra kundnöjdheten. - Få gladare medarbetare. - Vinn fler affärer."
           />
           <div className="container">
             {posts.map(({ node: post }) => (
