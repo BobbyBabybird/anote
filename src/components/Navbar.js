@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import styled from 'styled-components'
+import Headroom from 'react-headroom'
 import github from '../img/github-icon.svg'
 import logo from '../img/logo.svg'
 import { Wrapper } from './Wrapper'
@@ -26,22 +27,29 @@ const Logo = styled.div`
   background-color: dodgerblue;
   align-self: center;
 `
-const NavbarWrapper = styled(Wrapper)`
+const NavbarWrapper = styled(Headroom)`
   z-index: 100;
-`;
+  background-color: var(--primary-color);
+  color: #fff;
+  .headroom {
+    background-color: inherit;
+  }
+`
 
 const Navbar = () => (
   <NavbarWrapper>
-    <Nav>
-      <Logo>
-        Logo
-      </Logo>
-      <List>
-        <ListItem as="li">
-          Kontakta oss
-        </ListItem>
-      </List>
-    </Nav>
+    <Wrapper>
+      <Nav>
+        <Logo>
+          Logo
+        </Logo>
+        <List>
+          <ListItem as="li">
+            Kontakta oss
+          </ListItem>
+        </List>
+      </Nav>
+    </Wrapper>
   </NavbarWrapper>
 )
 

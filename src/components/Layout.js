@@ -66,6 +66,20 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   font-size: 1em;
+  .content h3 {
+    font-family: Roboto, sans-serif;
+    font-weight: 700;
+    color: var( --heading-color, --default-text-color);
+    font-size: 1.2rem;
+    margin: var(--margin-bottom, 20px) 0;
+  }
+  .content p {
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    color: var(--text-color, --default-text-color);
+    margin-bottom: var(--margin-bottom, 20px);
+    line-height: 1.2rem;
+  }
 `;
 
 const TemplateWrapper = ({ children }) => (
